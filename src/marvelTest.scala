@@ -10,7 +10,8 @@ object marvelTest {
         println(marvel(i))
         i=i+1
       }
-      println("\n\nArray in Reverse order")
+      println("\n\n Array in Reverse order")
+      println("Hello Gagan")
       var j=marvel.length-1
       while(j>=0) {
         println(marvel(j))
