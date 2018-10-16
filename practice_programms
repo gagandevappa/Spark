@@ -1,0 +1,130 @@
+factorial without recursion:
+============================
+object fact1 {
+  def main(arg: Array[String]) {
+    var num=5
+    var fact=1
+    while(num>0) {
+      fact=fact*(num)
+      num=num-1
+    }
+    println("num is: "+fact)
+  }
+}
+
+nestedFunctions:
+================
+object nestedFunc {
+  def main(arg: Array[String]) {
+    def squares(x:Double):Double= {
+      return x*x
+    }
+    def sumSquares(a:Double,b:Double):Double = {
+      val sum = squares(a)+squares(b)
+      return sum
+    }
+    println("Sum of the squares 3 and 4 is: "+sumSquares(3,4))
+    println("Sum of the squares 2 and 4 is: "+sumSquares(2,4))
+  }
+}
+
+Functions Test:
+===============
+object funcTest {
+  def main(arg: Array[String]) {
+    def functionTest(a:Double=10,b:Double=20):Double = {
+      var sum:Double=0
+      sum = a+b
+      return sum
+    }
+    println("The sum of 2 numbers is: "+functionTest(b=40))
+  }
+}
+
+Grading:
+========
+/*
+ * I want you to create a grading system using if else
+ * A - 80-100
+ * B - 65-79
+ * C - 50-64
+ * D - 35-49
+ * Fail - 0-34
+ */
+
+object fact1 {
+  def main(arg: Array[String]) {
+    var perc = 0
+    
+    if(perc >= 80 && perc<=100) {
+      println("A Grade")
+    }
+    else if(perc>=65 && perc<=79) {
+      println("B Grade")
+    }
+    else if(perc >= 50 && perc<=64) {
+      println("C Grade")
+    }
+    else if(perc >=35 && perc<=49) {
+      println("D Grade")
+    }
+    else if(perc <=34 && perc>=0) {
+      println("Fail")
+    }
+    else {
+    println("Invalid Percentage, please enter in between 0 to 100")
+    }
+  }
+}
+
+functions inside a class:
+=========================
+class greetFriend(greet:String) {
+  println("Gagan "+greet)
+  def sayHello(code: String) {
+    println(code)
+  }
+}
+object fact1 {
+  def main(arg: Array[String]) {
+    val test1=new greetFriend("hello, How are you?")
+    test1.sayHello("Enjoying the code practices?")
+  }
+}
+
+Higher order function:
+======================
+object fact1 {
+  def Id(x:Int):Int = {
+    return x
+  }
+  def sumInt(a:Int,b:Int):Int = {
+    if(a>b)0 else Id(a)+ sumInt(a+1,b)
+  }
+  def squares(x:Int):Int = {
+    return x*x
+  }
+  def sumSquares(a:Int,b:Int):Int = {
+    if(a>b)0 else squares(a)+ sumSquares(a+1,b)
+  }
+  def power(x:Int):Int = {
+    if(x==0)1 else 2*power(x-1)
+  }
+  def sumPower(a:Int,b:Int):Int = {
+    if(a>b)0 else power(a)+ sumPower(a+1,b)
+  }
+  def funcTest(f:Int=>Int,a:Int,b:Int):Int = {
+    if(a>b)0 else f(a) + funcTest(f,a+1,b)
+  }
+  def main(arg: Array[String]) {
+    println(sumSquares(2,4))
+    println(sumInt(2,4))
+    println(sumPower(2,4))
+    println(funcTest(squares,2,4))
+  }
+}
+
+traits example 2:
+=================
+
+
